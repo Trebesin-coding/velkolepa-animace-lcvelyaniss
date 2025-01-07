@@ -1,0 +1,103 @@
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        body {
+            background-color: #000c2a; 
+        } 
+
+        .wrapper {
+            height: 950px;
+            width: 1900px;
+            z-index: -5;
+        }
+
+        .button {
+            background-color: transparent;
+            border: 1px solid white;
+            color: white;
+            top: 68%;
+            left: 48%;
+            position: relative;
+        }
+        
+        .cup{
+            height: 250px;
+            width: 250px;
+            border-radius: 50%; 
+            background-color: white;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            position: absolute;
+            border: 5px solid;
+            top: 35%;
+            left: 43%;
+            z-index: 100;
+        }
+
+        .saucer {
+            height: 130px;
+            width: 350px;
+            border-radius: 50%;
+            background-color: white;
+            position: absolute;
+            top: 50%;
+            left: 40.5%;
+            border: 10px solid whitesmoke;
+        }
+
+        .cloud{
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 2px solid white;
+            opacity: 50%;
+            top: 35%;
+            left: 45%;
+            position: absolute;
+            animation: hot 4s forwards ease-out;
+            z-index: 99;
+        }
+
+        @keyframes hot {
+           100%{
+            opacity: 0;
+            translate: 40px -100px;
+            height: 50px;
+            width: 50px;
+           }
+        }
+    </style>
+
+
+</head>
+<body>
+    <button class="button">steam it</button>
+    <div class="cup"></div>
+    <div class="saucer"></div>
+    <div class="cloud"></div>
+    <div class="wrapper"></div>
+    
+        <script>
+            let button = document.querySelector(".button")
+            let wrapper = document.querySelector(".wrapper")
+
+            button.addEventListener("click", function (){
+            /*for (let i = 0; i < 5; i++) {} - zabalit vsechny let do toho a bude to dávat 5 micků na jedno kliknutí*/
+            let cloud = document.createElement("div")
+            cloud.classList.add("cloud")
+
+            let nahodneCislo = Math.floor(Math.random() * (1050 - 890) + 890 )
+            cloud.style.left = `${nahodneCislo}px`
+            cloud.style.bottom = `200px`
+            console.log(nahodneCislo)
+            wrapper.append(cloud)
+            })
+
+        </script>
+</body>
+</html>
