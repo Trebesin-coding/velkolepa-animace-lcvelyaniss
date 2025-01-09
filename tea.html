@@ -1,4 +1,4 @@
-<html lang="cs">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,6 @@
         body {
             background-color: #000c2a; 
         } 
-
         .wrapper {
             height: 950px;
             width: 1900px;
@@ -22,6 +21,7 @@
             top: 68%;
             left: 48%;
             position: relative;
+            animation: pulse 4s infinite ;
         }
         
         .cup{
@@ -32,10 +32,14 @@
             border-top-left-radius: 0px;
             border-top-right-radius: 0px;
             position: absolute;
-            border: 5px solid;
+            border: 5px solid whitesmoke;
             top: 35%;
             left: 43%;
             z-index: 100;
+        }
+
+        .saucer:hover{
+            background-color: lightblue;
         }
 
         .saucer {
@@ -47,6 +51,20 @@
             top: 50%;
             left: 40.5%;
             border: 10px solid whitesmoke;
+            z-index: 98;
+            transition-duration: 1500ms;
+        }
+
+        .cupholder{
+            height: 115px;
+            width: 100px;
+            border-radius: 50%;
+            border: 15px solid whitesmoke;
+            background-color: transparent;
+            position: relative;
+            left: 53%;
+            bottom: 67%;
+            z-index: 99;
         }
 
         .cloud{
@@ -60,7 +78,7 @@
             left: 45%;
             position: absolute;
             animation: hot 4s forwards ease-out;
-            z-index: 99;
+            z-index: 160;
         }
 
         @keyframes hot {
@@ -70,6 +88,96 @@
             height: 50px;
             width: 50px;
            }
+        }
+
+        @keyframes pulse {
+            50% {
+            transform: scale(1.5);
+            }
+        }
+
+        .red{
+            height: 200px;
+            width: 200px;
+            border: 10px solid #000c2a;
+            border-top: 16px solid red; 
+            border-right: 16px solid red;
+            border-radius: 50%;
+            position: relative;
+            left: 45%;
+            bottom: 109%;
+            animation: spin 2s linear infinite;
+            z-index: 107;
+        }
+
+        .orange{
+            height: 185px;
+            width: 185px;
+            border: 9px solid #000c2a;
+            border-top: 16px solid orangered; 
+            border-right: 16px solid orangered;
+            border-radius: 50%;
+            position: relative;
+            left: 45.45%;
+            bottom: 132.7%;
+            animation: spin 2s linear infinite;
+            z-index: 108;
+        }
+        .yellow{
+            height: 170px;
+            width: 170px;
+            border: 7px solid #000c2a;
+            border-top: 15px solid yellow; 
+            border-right: 15px solid yellow;
+            border-radius: 50%;
+            position: relative;
+            left: 46%;
+            bottom: 154.7%;
+            animation: spin 2s linear infinite;
+            z-index: 109;
+        }
+        .green{
+            height: 158px;
+            width: 158px;
+            border: 6px solid #000c2a;
+            border-top: 14px solid rgb(0, 212, 0); 
+            border-right: 14px solid rgb(0, 212, 0);
+            border-radius: 50%;
+            position: relative;
+            left: 46.45%;
+            bottom: 174.6%;
+            animation: spin 2s linear infinite;
+            z-index: 110;
+        }
+        .blue{
+            height: 128px;
+            width: 128px;
+            border: 10px solid #000c2a;
+            border-top: 16px solid #205fff; 
+            border-right: 16px solid #205fff;
+            border-radius: 50%;
+            position: relative;
+            left: 47%;
+            bottom: 193.6%;
+            animation: spin 2s linear infinite;
+            z-index: 120;
+        }
+
+        .box{
+            height: 120px;
+            width: 310px;
+            background-color: white;
+            bottom: 204.5%;
+            left: 42%;
+            position: relative;
+            z-index: 150;
+            background-color: #000c2a;
+        }
+
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
     </style>
 
@@ -81,7 +189,14 @@
     <div class="saucer"></div>
     <div class="cloud"></div>
     <div class="wrapper"></div>
-    
+    <div class="cupholder"></div>
+
+    <div class="red"></div>
+    <div class="orange"></div>
+    <div class="yellow"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="box"></div>
         <script>
             let button = document.querySelector(".button")
             let wrapper = document.querySelector(".wrapper")
